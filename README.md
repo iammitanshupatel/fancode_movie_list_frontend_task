@@ -23,9 +23,15 @@ You may also see any lint errors in the console.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The build is minified and the filenames include the hashes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Libraries Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Material UI**: For UI components and styling.
+- **Axios**: For making HTTP requests.
+- **React Infinite Scroll Component**: For infinite scrolling functionality.
+
+## Logic Used
+
+- **Debounce Effect**: Implemented within the search bar to minimize API calls during user input.
+- **Genre Filtering**: Allows users to filter top-rated movies by genre.
