@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Typography, Box, Input } from "@mui/material";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 import MovieCard from "../MovieCard";
@@ -15,6 +14,7 @@ const MovieList = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [maxLimit, setMaxLimit] = useState();
+  const [notFound, setNotFound] = useState(false);
   const debounceTimeout = useRef(null);
 
   const fetchGenres = async () => {
@@ -83,6 +83,7 @@ const MovieList = () => {
       const moviesFromData = {
         data: response?.data?.results,
       };
+      setNotFound(response?.data?.total_results === 0);
       setMaxLimit(response?.data?.total_results);
       setMovies([...moviesPassed, moviesFromData]);
     } catch (error) {
@@ -130,10 +131,9 @@ const MovieList = () => {
   const hasMore = inputValue
     ? movies?.reduce((p, c) => +p + +c?.data?.length, []) < maxLimit
     : year !== new Date().getFullYear();
-
   return (
     <>
-      <Input
+      <input
         className="search-bar"
         placeholder="Search Movies"
         value={inputValue}
@@ -141,6 +141,8 @@ const MovieList = () => {
           const value = e?.target?.value;
           setMovies([]);
           setInputValue(value);
+          setIsLoading(true);
+          setNotFound(false);
         }}
       />
       {!inputValue && (
@@ -159,34 +161,23 @@ const MovieList = () => {
         loader={<></>}
       >
         {movies?.map((movie) => (
-          <Box className="movie-list-container" key={movie?.year}>
+          <div className="movie-list-container" key={movie?.year}>
             {movie?.year && (
-              <Typography
-                component="h3"
-                variant="h3"
-                sx={{ color: "white", mb: 3 }}
-              >
+              <h3 style={{ color: "white", marginBottom: "24px" }}>
                 {movie.year}
-              </Typography>
+              </h3>
             )}
-            <Box display="flex" flexWrap="wrap" gap={2}>
+            <div className="movie-card-list">
               {movie?.data?.map((movie) => (
                 <MovieCard key={movie?.id} movie={movie} genres={genres} />
               ))}
-            </Box>
-          </Box>
+            </div>
+          </div>
         ))}
       </InfiniteScroll>
-      {isLoading && (
-        <Typography component="h6" variant="h6" sx={{ color: "white" }}>
-          Loading...
-        </Typography>
-      )}
-      {errorMessage && (
-        <Typography component="h6" variant="h6" sx={{ color: "red" }}>
-          {errorMessage}
-        </Typography>
-      )}
+      {notFound && <h6 style={{ color: "white" }}>No Data Found</h6>}
+      {isLoading && <h6 style={{ color: "white" }}>Loading...</h6>}
+      {errorMessage && <h6 style={{ color: "red" }}>{errorMessage}</h6>}
     </>
   );
 };

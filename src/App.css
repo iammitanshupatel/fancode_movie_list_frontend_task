@@ -2,12 +2,36 @@ body {
   background-color: black;
 }
 
+.container {
+  width: 90%;
+  margin-left: auto;
+  box-sizing: border-box;
+  margin-right: auto;
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .movie-card {
   width: 350px;
   height: 400px;
-  & .MuiCardContent-root {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  & .card-media {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  & .card-content {
     overflow: auto;
     height: 240px;
+    padding: 16px 16px 24px 16px;
     & .genre-names {
       font-weight: 500;
       margin-top: 8px;
@@ -39,6 +63,7 @@ body {
   margin-bottom: 24px;
   border-radius: 8px;
   padding: 8px;
+  height: 48px;
 }
 
 .movie-list-container {
@@ -46,4 +71,47 @@ body {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
+}
+
+.movie-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 1.167;
+  letter-spacing: 0em;
+}
+h5 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  margin-bottom: 0.35em;
+}
+h6 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.body2 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }

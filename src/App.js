@@ -1,12 +1,11 @@
-import Container from "@mui/material/Container";
 import MovieList from "./components/MovieList";
 import "./App.css";
 
 function App() {
   return (
-    <Container>
+    <div className="container">
       <MovieList />
-    </Container>
+    </div>
   );
 }
 

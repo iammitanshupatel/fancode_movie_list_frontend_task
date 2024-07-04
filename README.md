@@ -27,7 +27,6 @@ The build is minified and the filenames include the hashes.
 
 ## Libraries Used
 
-- **Material UI**: For UI components and styling.
 - **Axios**: For making HTTP requests.
 - **React Infinite Scroll Component**: For infinite scrolling functionality.
 

@@ -1,21 +1,19 @@
-import Box from "@mui/material/Box";
-
 const GenreFilter = ({ genres, selectedGenre, handleGenreChange }) => {
   return (
-    <Box className="genre-filter-container">
+    <div className="genre-filter-container">
       {genres?.map((genre) => (
-        <Box
+        <span
           component="span"
           key={genre?.id}
-          sx={{
+          style={{
             backgroundColor: selectedGenre?.id === genre?.id ? "red" : "grey",
           }}
           onClick={() => handleGenreChange(genre)}
         >
           {genre?.name}
-        </Box>
+        </span>
       ))}
-    </Box>
+    </div>
   );
 };
 
