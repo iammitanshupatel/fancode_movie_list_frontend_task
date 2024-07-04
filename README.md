@@ -25,6 +25,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.
 
+## Topics Covered
+
+- **Popular Movies by Year**: Displays a list of popular movies organized by year.
+- **Smooth Pagination**: Enables seamless scrolling pagination.
+- **Genre-Based Filtering**: Allows filtering of movies based on the selected genre.
+- **Search Functionality**: Includes a search bar for finding movies, with infinite scrolling for search results.
+- **Movie Cards**: Each movie card displays the title, a short description, and associated genres.
+- **Custom Styling**: All styling is custom-built without using third-party tools.
+
 ## Libraries Used
 
 - **Axios**: For making HTTP requests.
@@ -33,4 +42,3 @@ The build is minified and the filenames include the hashes.
 ## Logic Used
 
 - **Debounce Effect**: Implemented within the search bar to minimize API calls during user input.
-- **Genre Filtering**: Allows users to filter top-rated movies by genre.
