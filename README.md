@@ -1,6 +1,22 @@
 # Fancode Movie List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Topics Covered
+
+- **Popular Movies by Year**: Displays a list of popular movies organized by year.
+- **Smooth Pagination**: Enables seamless scrolling pagination.
+- **Genre-Based Filtering**: Allows filtering of movies based on the selected genre.
+- **Search Functionality**: Includes a search bar for finding movies, with infinite scrolling for search results.
+- **Movie Cards**: Each movie card displays the title, a short description, and associated genres.
+- **Custom Styling**: All styling is custom-built without using third-party tools.
+
+## Libraries Used
+
+- **Axios**: For making HTTP requests.
+- **React Infinite Scroll Component**: For infinite scrolling functionality.
+
+## Logic Used
+
+- **Debounce Effect**: Implemented within the search bar to minimize API calls during user input.
 
 ## Available Scripts
 
@@ -24,21 +40,3 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.
-
-## Topics Covered
-
-- **Popular Movies by Year**: Displays a list of popular movies organized by year.
-- **Smooth Pagination**: Enables seamless scrolling pagination.
-- **Genre-Based Filtering**: Allows filtering of movies based on the selected genre.
-- **Search Functionality**: Includes a search bar for finding movies, with infinite scrolling for search results.
-- **Movie Cards**: Each movie card displays the title, a short description, and associated genres.
-- **Custom Styling**: All styling is custom-built without using third-party tools.
-
-## Libraries Used
-
-- **Axios**: For making HTTP requests.
-- **React Infinite Scroll Component**: For infinite scrolling functionality.
-
-## Logic Used
-
-- **Debounce Effect**: Implemented within the search bar to minimize API calls during user input.
